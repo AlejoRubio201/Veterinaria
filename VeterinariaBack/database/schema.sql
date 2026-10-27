@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS veterinaria
+  CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE veterinaria;
+
+CREATE TABLE IF NOT EXISTS usuarios (
+  id              INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  nombre          VARCHAR(80)  NOT NULL,
+  apellido        VARCHAR(80)  NOT NULL,
+  email           VARCHAR(120) NOT NULL UNIQUE,
+  telefono        VARCHAR(30)  NULL,
+  avatar          VARCHAR(255) NULL,
+  creado_en       TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  actualizado_en  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
