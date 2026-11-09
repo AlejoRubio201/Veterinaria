@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
 import AuthProvider from './context/AuthProvider'
 import ProtectedRoute from './components/ProtectedRoute'
 import Layout from './components/Layout'
 import Login from './pages/Login'
 import Registro from './pages/Registro'
+=======
+import { HashRouter, Routes, Route } from 'react-router-dom'
+import Layout from './components/Layout'
+>>>>>>> f07299732d4d49260762e4f908dbfd0c91a7cf2a
 import Inicio from './pages/Inicio'
 import MisMascotas from './pages/MisMascotas'
 import PerfilMascota from './pages/PerfilMascota'
@@ -18,6 +23,7 @@ import Configuracion from './pages/Configuracion'
 
 export default function App() {
   return (
+<<<<<<< HEAD
     <AuthProvider>
       <HashRouter>
         <Routes>
@@ -48,5 +54,25 @@ export default function App() {
         </Routes>
       </HashRouter>
     </AuthProvider>
+=======
+    <HashRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Inicio />} />
+          <Route path="/mascotas" element={<MisMascotas />} />
+          <Route path="/perfil" element={<PerfilMascota />} />
+          <Route path="/perfil/:id" element={<PerfilMascota />} />
+          <Route path="/citas" element={<CitasVeterinarias />} />
+          <Route path="/recordatorios" element={<Recordatorios />} />
+          <Route path="/cuidados" element={<CuidadosHigiene />} />
+          <Route path="/alergias" element={<AlergiasCondiciones />} />
+          <Route path="/notas" element={<NotasDiario />} />
+          <Route path="/galeria" element={<GaleriaFotos />} />
+          <Route path="/agregar-mascota" element={<AgregarMascota />} />
+          <Route path="/configuracion" element={<Configuracion />} />
+        </Route>
+      </Routes>
+    </HashRouter>
+>>>>>>> f07299732d4d49260762e4f908dbfd0c91a7cf2a
   )
 }

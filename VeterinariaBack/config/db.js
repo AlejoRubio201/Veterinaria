@@ -1,8 +1,15 @@
+<<<<<<< HEAD
 const mysql = require('mysql2/promise');
 const bcrypt = require('bcryptjs');
 const env = require('./env');
 
 // Pool compartido. Todo se guarda/lee en UTC para evitar desfases de zona horaria.
+=======
+require('dotenv').config();
+const mysql = require('mysql2/promise');
+
+// Pool de conexiones compartido por todos los modelos
+>>>>>>> f07299732d4d49260762e4f908dbfd0c91a7cf2a
 const pool = mysql.createPool({
   host: process.env.DB_HOST || 'localhost',
   port: Number(process.env.DB_PORT) || 3306,
@@ -12,6 +19,7 @@ const pool = mysql.createPool({
   waitForConnections: true,
   connectionLimit: 10,
   charset: 'utf8mb4',
+<<<<<<< HEAD
   timezone: 'Z',
   dateStrings: ['DATE'],
 });
@@ -131,6 +139,24 @@ async function crearAdminSiHaceFalta() {
     [env.adminEmail, hash]
   );
   console.log(`Administrador creado: ${env.adminEmail}`);
+=======
+});
+
+// Crea la tabla si no existe (equivale a database/schema.sql)
+async function inicializarDB() {
+  await pool.query(`
+    CREATE TABLE IF NOT EXISTS usuarios (
+      id              INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+      nombre          VARCHAR(80)  NOT NULL,
+      apellido        VARCHAR(80)  NOT NULL,
+      email           VARCHAR(120) NOT NULL UNIQUE,
+      telefono        VARCHAR(30)  NULL,
+      avatar          VARCHAR(255) NULL,
+      creado_en       TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      actualizado_en  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    ) ENGINE=InnoDB
+  `);
+>>>>>>> f07299732d4d49260762e4f908dbfd0c91a7cf2a
 }
 
 module.exports = { pool, inicializarDB };

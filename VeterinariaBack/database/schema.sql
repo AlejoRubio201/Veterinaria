@@ -2,6 +2,7 @@ CREATE DATABASE IF NOT EXISTS veterinaria
   CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE veterinaria;
 
+<<<<<<< HEAD
 -- Las tablas también se crean solas al iniciar la API (config/db.js).
 CREATE TABLE IF NOT EXISTS usuarios (
   id                INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -74,4 +75,15 @@ CREATE TABLE IF NOT EXISTS registros (
   FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE,
   FOREIGN KEY (mascota_id) REFERENCES mascotas(id) ON DELETE CASCADE,
   INDEX idx_registros_usuario_cat (usuario_id, categoria, fecha)
+=======
+CREATE TABLE IF NOT EXISTS usuarios (
+  id              INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  nombre          VARCHAR(80)  NOT NULL,
+  apellido        VARCHAR(80)  NOT NULL,
+  email           VARCHAR(120) NOT NULL UNIQUE,
+  telefono        VARCHAR(30)  NULL,
+  avatar          VARCHAR(255) NULL,
+  creado_en       TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  actualizado_en  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+>>>>>>> f07299732d4d49260762e4f908dbfd0c91a7cf2a
 ) ENGINE=InnoDB;

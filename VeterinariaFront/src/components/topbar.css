@@ -27,7 +27,29 @@
   flex: 1;
 }
 
+<<<<<<< HEAD
 .topbar-nombre { font-size: 13.5px; font-weight: 700; color: var(--ink-700); }
+=======
+.topbar-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface-100);
+  border-radius: 999px;
+  padding: 8px 14px;
+  color: var(--ink-400);
+  width: 220px;
+}
+.topbar-search input {
+  border: none;
+  background: transparent;
+  padding: 0;
+  width: 100%;
+}
+.topbar-search input:focus {
+  outline: none;
+}
+>>>>>>> f07299732d4d49260762e4f908dbfd0c91a7cf2a
 
 .topbar-avatar {
   width: 36px;
@@ -39,7 +61,11 @@
   .topbar-menu-btn {
     display: flex;
   }
+<<<<<<< HEAD
   .topbar-nombre {
+=======
+  .topbar-search {
+>>>>>>> f07299732d4d49260762e4f908dbfd0c91a7cf2a
     display: none;
   }
   .topbar {

@@ -12,7 +12,10 @@ import {
   Settings,
   LogOut,
 } from 'lucide-react'
+<<<<<<< HEAD
 import { useAuth } from '../hooks/useAuth'
+=======
+>>>>>>> f07299732d4d49260762e4f908dbfd0c91a7cf2a
 import './sidebar.css'
 
 const navItems = [
@@ -29,7 +32,10 @@ const navItems = [
 
 export default function Sidebar({ open, onClose }) {
   const navigate = useNavigate()
+<<<<<<< HEAD
   const { logout } = useAuth()
+=======
+>>>>>>> f07299732d4d49260762e4f908dbfd0c91a7cf2a
 
   const handleNav = () => {
     if (onClose) onClose()
@@ -73,10 +79,16 @@ export default function Sidebar({ open, onClose }) {
           <button
             type="button"
             className="sidebar-link sidebar-logout"
+<<<<<<< HEAD
             onClick={async () => {
               handleNav()
               await logout() // revoca el refresh token en el servidor y limpia la sesión
               navigate('/login', { replace: true })
+=======
+            onClick={() => {
+              handleNav()
+              navigate('/')
+>>>>>>> f07299732d4d49260762e4f908dbfd0c91a7cf2a
             }}
           >
             <LogOut size={18} strokeWidth={2.2} />
