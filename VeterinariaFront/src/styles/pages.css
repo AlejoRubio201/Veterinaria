@@ -1,0 +1,89 @@
+/* ===== Estilos específicos de pantallas (separados del JSX) ===== */
+
+/* Inicio */
+.hero-card { display: flex; align-items: center; justify-content: space-between; padding: 28px 32px; background: linear-gradient(120deg, var(--brand-50), var(--surface-0) 70%); margin-bottom: 20px; gap: 20px; flex-wrap: wrap; }
+.hero-text h1 { margin: 0 0 6px; font-size: 26px; font-weight: 800; }
+.hero-text p { margin: 0; color: var(--ink-500); font-size: 14px; max-width: 320px; }
+.hero-photos { display: flex; align-items: flex-end; }
+.hero-photos img { border-radius: 50%; object-fit: cover; border: 4px solid var(--surface-0); box-shadow: var(--shadow-card); }
+.hero-photos img:first-child { width: 110px; height: 110px; z-index: 2; }
+.hero-photos img:last-child:not(:first-child) { width: 76px; height: 76px; margin-left: -26px; }
+.home-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 20px; align-items: start; }
+.home-col { display: flex; flex-direction: column; gap: 20px; }
+.section-card { padding: 20px 22px; }
+.section-card-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.section-card-head h2 { font-size: 16px; margin: 0; font-weight: 800; }
+.link-more { font-size: 13px; font-weight: 700; color: var(--brand-600); }
+.home-tip { background: linear-gradient(160deg, var(--brand-500), var(--brand-700)); color: white; padding: 26px 22px; display: flex; flex-direction: column; justify-content: space-between; min-height: 200px; }
+.home-tip-text { font-size: 17px; font-weight: 700; line-height: 1.4; margin: 0; }
+.home-tip-icon { align-self: flex-end; width: 46px; height: 46px; border-radius: 50%; background: rgba(255, 255, 255, 0.18); display: flex; align-items: center; justify-content: center; }
+
+/* Mascotas */
+.pet-list { display: flex; flex-direction: column; gap: 14px; max-width: 520px; }
+.pet-row-meta { color: var(--ink-400) !important; margin-top: 2px; }
+.pet-select { display: flex; gap: 10px; margin-bottom: 18px; flex-wrap: wrap; }
+.pet-select-chip { display: flex; align-items: center; gap: 8px; padding: 6px 14px 6px 6px; border-radius: 999px; border: 1.5px solid var(--surface-border); background: var(--surface-0); font-size: 13px; font-weight: 700; color: var(--ink-500); }
+.pet-select-chip-active { border-color: var(--brand-500); background: var(--brand-50); color: var(--brand-700); }
+
+/* Perfil de mascota */
+.profile-card { display: flex; gap: 18px; padding: 20px; margin-bottom: 16px; align-items: flex-start; }
+.profile-info { flex: 1; }
+.profile-info-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; flex-wrap: wrap; }
+.profile-info-top h1 { margin: 0; font-size: 21px; font-weight: 800; }
+.profile-sub { color: var(--ink-500); font-size: 13.5px; }
+.profile-tags { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+.profile-actions { display: flex; gap: 8px; }
+.vac-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+.vac-chip { border: 1px solid var(--surface-border); border-radius: var(--radius-md); padding: 14px; display: flex; flex-direction: column; gap: 6px; }
+.vac-chip strong { font-size: 14px; }
+.vac-chip small { color: var(--ink-500); font-size: 12px; }
+.vac-chip-next { border-color: var(--brand-400); background: var(--brand-50); max-width: 220px; }
+.panel-toolbar { display: flex; justify-content: flex-end; margin-bottom: 12px; }
+
+/* Asistente agregar/editar mascota */
+.wizard-card { max-width: 620px; padding: 24px; }
+.wizard-steps { display: flex; gap: 22px; margin-bottom: 22px; flex-wrap: wrap; }
+.wizard-step { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--ink-400); }
+.wizard-step-active { color: var(--brand-600); }
+.wizard-step-dot { width: 22px; height: 22px; border-radius: 50%; background: var(--surface-100); color: var(--ink-400); display: flex; align-items: center; justify-content: center; font-size: 11.5px; }
+.wizard-step-active .wizard-step-dot { background: var(--brand-500); color: white; }
+.wizard-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.wizard-photo { text-align: center; }
+.photo-preview { width: 120px; height: 120px; border-radius: 50%; margin: 10px auto; display: flex; align-items: center; justify-content: center; border: 1.5px dashed var(--surface-border); color: var(--ink-400); overflow: hidden; }
+.photo-preview img { width: 100%; height: 100%; object-fit: cover; }
+.wizard-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 24px; border-top: 1px solid var(--surface-border); padding-top: 18px; }
+@media (max-width: 540px) { .wizard-row { grid-template-columns: 1fr; } }
+
+/* Galería */
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; max-width: 720px; }
+.gallery-tile { position: relative; aspect-ratio: 1; border-radius: var(--radius-md); overflow: hidden; background: var(--surface-100); }
+.gallery-tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.gallery-del { position: absolute; top: 6px; right: 6px; background: rgba(255, 255, 255, 0.9); }
+
+/* Cuidados */
+.care-date { font-size: 12.5px; color: var(--ink-400); white-space: nowrap; }
+
+/* Configuración */
+.settings-stack { display: flex; flex-direction: column; gap: 8px; max-width: 620px; }
+.user-card { display: flex; align-items: center; gap: 14px; padding: 18px 20px; margin-bottom: 22px; max-width: 620px; }
+.user-card div { display: flex; flex-direction: column; gap: 2px; }
+.user-card strong { font-size: 15px; }
+.user-card span { font-size: 13px; color: var(--ink-500); }
+.badge-rol { align-self: flex-start; }
+.app-info { color: var(--ink-400); font-size: 12.5px; max-width: 620px; }
+
+/* Inicio de sesión / registro */
+.auth-shell { min-height: 100vh; width: 100%; display: flex; align-items: center; justify-content: center; padding: 24px; background: linear-gradient(140deg, var(--brand-50), var(--surface-50) 60%); }
+.auth-card { width: 100%; max-width: 420px; padding: 32px 28px; }
+.auth-brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 20px; color: var(--brand-700); margin-bottom: 6px; }
+.auth-brand-icon { width: 38px; height: 38px; border-radius: 12px; background: var(--brand-500); color: white; display: flex; align-items: center; justify-content: center; }
+.auth-card h1 { font-size: 22px; margin: 14px 0 4px; font-weight: 800; }
+.auth-sub { color: var(--ink-500); font-size: 13.5px; margin: 0 0 20px; }
+.auth-form .form-grid { grid-template-columns: 1fr; }
+.auth-form.form-card { box-shadow: none; border: none; padding: 0; margin: 0; max-width: none; }
+.auth-form .form-actions { justify-content: stretch; }
+.auth-form .form-actions .btn { width: 100%; padding: 12px; }
+.auth-alt { text-align: center; margin: 18px 0 0; font-size: 13.5px; color: var(--ink-500); }
+.auth-alt a { color: var(--brand-600); font-weight: 700; }
+
+@media (max-width: 860px) { .home-grid { grid-template-columns: 1fr; } }
